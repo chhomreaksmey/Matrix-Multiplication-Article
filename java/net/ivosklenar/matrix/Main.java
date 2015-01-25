@@ -35,7 +35,7 @@ public class Main {
                     C[i][j] += A[i][k + 3] * B[k + 3][j];
                 }
 
-                for (int k = n - uf; k < n; k++) {
+                for (int k = n - ( n % uf); k < n; k++) {
                     C[i][j] += A[i][k] * B[k][j];
                 }
             }
@@ -55,8 +55,8 @@ public class Main {
                     C[i][j + 2] += tmp * B[k][j + 2];
                     C[i][j + 3] += tmp * B[k][j + 3];
                 }
-
-                for (int j = n - uf; j < n; j++) {
+                
+                for (int j = n - ( n % uf); j < n; j++) {
                     C[i][j] += tmp * B[k][j];
                 }
             }
